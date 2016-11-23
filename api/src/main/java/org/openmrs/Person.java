@@ -1054,5 +1054,17 @@ public class Person extends BaseOpenmrsData {
 		setPersonId(id);
 		
 	}
+	public void htmlEscape() {
+		if (getNames() != null && getNames().size() > 0) {
+      for (PersonName name : getNames()) {
+				name.htmlEscape();
+      }
+    }
+    if (getAddresses() != null && getAddresses().size() > 0) {
+      for (PersonAddress address : getAddresses()) {
+        address.htmlEscape();
+      }
+    }
+	}
 	
 }

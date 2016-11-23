@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -458,6 +459,16 @@ public class PersonName extends BaseOpenmrsData implements java.io.Serializable,
 		
 	}
 	
+  public void htmlEscape() {
+    this.givenName = StringEscapeUtils.escapeHtml(this.givenName);
+    this.middleName = StringEscapeUtils.escapeHtml(this.middleName);
+    this.familyNamePrefix = StringEscapeUtils.escapeHtml(this.familyNamePrefix);
+    this.familyName = StringEscapeUtils.escapeHtml(this.familyName);
+    this.familyName2 = StringEscapeUtils.escapeHtml(this.familyName2);
+    this.familyNameSuffix = StringEscapeUtils.escapeHtml(this.familyNameSuffix);
+    this.degree = StringEscapeUtils.escapeHtml(this.degree);
+  }
+
 	public static void setFormat(String format) {
 		if (StringUtils.isEmpty(format)) {
 			PersonName.format = OpenmrsConstants.PERSON_NAME_FORMAT_SHORT;

@@ -133,6 +133,7 @@ public class PatientServiceImpl extends BaseOpenmrsService implements PatientSer
 			checkPatientIdentifiers(patient);
 		}
 		
+		patient.htmlEscape();
 		PatientIdentifier preferredIdentifier = null;
 		PatientIdentifier possiblePreferredId = patient.getPatientIdentifier();
 		if (possiblePreferredId != null && possiblePreferredId.isPreferred() && !possiblePreferredId.isVoided()) {

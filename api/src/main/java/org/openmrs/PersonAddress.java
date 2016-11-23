@@ -14,6 +14,7 @@ import static org.apache.commons.lang.StringUtils.defaultString;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.logging.Log;
@@ -651,5 +652,27 @@ public class PersonAddress extends BaseOpenmrsData implements java.io.Serializab
 	 */
 	public void setAddress15(String address15) {
 		this.address15 = address15;
+	}
+	public void htmlEscape() {
+		this.address1 = StringEscaleUtils.escapeHtml(this.address1);
+		this.address2 = StringEscaleUtils.escapeHtml(this.address2);
+		this.address3 = StringEscaleUtils.escapeHtml(this.address3);
+		this.address4 = StringEscaleUtils.escapeHtml(this.address4);
+		this.address5 = StringEscaleUtils.escapeHtml(this.address5);
+		this.address6 = StringEscaleUtils.escapeHtml(this.address6);
+		this.address7 = StringEscaleUtils.escapeHtml(this.address7);
+		this.address8 = StringEscaleUtils.escapeHtml(this.address8);
+		this.address9 = StringEscaleUtils.escapeHtml(this.address9);
+		this.address10 = StringEscaleUtils.escapeHtml(this.address10);
+		this.address11 = StringEscaleUtils.escapeHtml(this.address11);
+		this.address12 = StringEscaleUtils.escapeHtml(this.address12);
+		this.address13 = StringEscaleUtils.escapeHtml(this.address13);
+		this.address14 = StringEscaleUtils.escapeHtml(this.address14);
+		this.address15 = StringEscaleUtils.escapeHtml(this.address15);
+		this.cityVillage = StringEscaleUtils.escapeHtml(this.cityVillage);
+		this.countryDistrict = StringEscaleUtils.escapeHtml(this.countryDistrict);
+		this.stateProvince = StringEscaleUtils.escapeHtml(this.stateProvince);
+		this.country = StringEscaleUtils.escapeHtml(this.country);
+		this.postalCode = StringEscaleUtils.escapeHtml(this.postalCode);
 	}
 }
